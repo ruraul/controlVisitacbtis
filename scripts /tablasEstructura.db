@@ -1,0 +1,46 @@
+CREATE TABLE motivo(
+    id_motivo SERIAL PRIMARY KEY,
+    motivo VARCHAR(50) NOT NULL,
+    id_dep INT 
+);
+
+CREATE TABLE visita(
+    id_visita SERIAL PRIMARY KEY,
+    nombrevisitante VARCHAR(100) NOT NULL,
+    apellidopaternovisitante VARCHAR(50) NOT NULL,
+    apellidomaternovisitante VARCHAR(50) NOT NULL,
+    numcel VARCHAR(15) NOT NULL,
+    id_motivo INT,
+    fecha TIMESTAMP NOT NULL,
+    estatus VARCHAR(10)
+);
+
+CREATE TABLE puesto(
+    num_puesto SERIAL PRIMARY KEY,
+    nompuesto VARCHAR(20) NOT NULL
+);
+
+CREATE TABLE departamento(
+    id_dep SERIAL PRIMARY KEY,
+    nombredep VARCHAR(50) NOT NULL,
+    horarioatencion VARCHAR(100)
+);
+
+CREATE TABLE personal(
+    id_personal SERIAL PRIMARY KEY,
+    nombre VARCHAR(100) NOT NULL,
+    apellidopaterno VARCHAR(50) NOT NULL,
+    apellidomaterno VARCHAR(50) NOT NULL
+    id_departamento INT,
+    contrasena VARCHAR(50) NOT NULL,
+    num_puesto INT
+    numcel VARCHAR(50)
+);
+
+ALTER TABLE visita
+ADD COLUMN apellidopaternovisitante VARCHAR(50) NOT NULL,
+ADD COLUMN apellidomaternovisitante VARCHAR(50) NOT NULL;
+
+ALTER TABLE personal 
+ADD COLUMN apellidopaterno VARCHAR(50) NOT NULL,
+ADD COLUMN apellidomaterno VARCHAR(50) NOT NULL;

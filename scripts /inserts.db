@@ -1,0 +1,113 @@
+INSERT INTO motivo (motivo, id_dep) VALUES ('Consulta vinculacion', 1);
+INSERT INTO motivo (motivo, id_dep) VALUES ('Consulta planeacion', 2);
+INSERT INTO motivo (motivo, id_dep) VALUES ('Consulta Docentes TM', 3);
+INSERT INTO motivo (motivo, id_dep) VALUES ('Consulta Docentes TV', 4);
+
+INSERT INTO visita (nombrevisitante, 
+apellidopaternovisitante, 
+apellidomaternovisitante, 
+numcel, 
+id_motivo, 
+fecha, 
+estatus) 
+VALUES (
+'Raul',
+'Higareda',
+'Soto',
+'6182036890',
+1,
+now(),
+'activo'
+);
+
+INSERT INTO visita (nombrevisitante, 
+apellidopaternovisitante, 
+apellidomaternovisitante, 
+numcel, 
+id_motivo, 
+fecha, 
+estatus) 
+VALUES (
+'Gustavo',
+'Higareda',
+'Soto',
+'6181092960',
+2,
+now(),
+'activo'
+);
+
+INSERT INTO visita (nombrevisitante, 
+apellidopaternovisitante, 
+apellidomaternovisitante, 
+numcel, 
+id_motivo, 
+fecha, 
+estatus) 
+VALUES (
+'Rosa',
+'Soto',
+'Acosta',
+'6182036890',
+4,
+now(),
+'terminado'
+);
+
+INSERT INTO puesto (nompuesto) VALUES ('Directo');
+INSERT INTO puesto (nompuesto) VALUES ('Subdirector');
+INSERT INTO puesto (nompuesto) VALUES ('Jefe de departamento');
+INSERT INTO puesto (nompuesto) VALUES ('Jefe de oficina');
+INSERT INTO puesto (nompuesto) VALUES ('Auxiliar');
+INSERT INTO puesto (nompuesto) VALUES ('Vigilante');
+
+
+
+INSERT INTO departamento (nombredep, horarioatencion) VALUES ('vinculacion', '9am - 2pm');
+INSERT INTO departamento (nombredep, horarioatencion) VALUES ('Planeacion', '9am - 2pm');
+INSERT INTO departamento (nombredep, horarioatencion) VALUES ('Docentes TM', '9am - 2pm');
+INSERT INTO departamento (nombredep, horarioatencion) VALUES ('Docentes TV', '2pm - 8pm');
+INSERT INTO departamento (nombredep, horarioatencion) VALUES ('Orientacion TM', '9am - 2pm');
+INSERT INTO departamento (nombredep, horarioatencion) VALUES ('Servicios Escolares TV', '2pm - 8pm');
+INSERT INTO departamento (nombredep, horarioatencion) VALUES ('Servicios Escolares TM', '9am - 2pm');
+INSERT INTO departamento (nombredep, horarioatencion) VALUES ('Control Escolar', '9am - 2pm');
+INSERT INTO departamento (nombredep, horarioatencion) VALUES ('Recursos Humanos', '9am - 2pm');
+INSERT INTO departamento (nombredep, horarioatencion) VALUES ('Direccion', '9am - 2pm');
+INSERT INTO departamento (nombredep, horarioatencion) VALUES ('Subdireccion', '9am - 2pm');
+INSERT INTO departamento (nombredep, horarioatencion) VALUES ('Vigilancia', '7am - 9pm');
+
+
+INSERT INTO personal (
+nombre, 
+apellidopaterno, 
+apellidomaterno, 
+id_departamento, 
+contrasena, 
+num_puesto, 
+numcel) 
+VALUES (
+'prueba',
+'personal',
+'seguridad',
+
+'contrasena',
+6,
+'6180000000'
+); 
+
+INSERT INTO personal (
+nombre, 
+apellidopaterno, 
+apellidomaterno, 
+id_departamento, 
+contrasena, 
+num_puesto, 
+numcel) 
+VALUES (
+'prueba',
+'personal',
+'direccion',
+'contrasena',
+1,
+'6180000000'
+); 
