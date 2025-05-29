@@ -4,48 +4,39 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 
 use App\Http\Controllers\motivoController;
+use App\Http\Controllers\puestosController;
+use App\Http\Controllers\departamentoController;
+use App\Http\Controllers\visitaController;
+use App\Http\Controllers\personalController;
 
-// Route::get('/user', function (Request $request) {
-//     return $request->user();
-// })->middleware('auth:sanctum');
 
 Route::get('/helpcheck', function() {
     return 'alive';
 });
 
-Route::post('/crearusuario', function(){
-    // crear usuario
-});
+Route::get('/verpuestos',[puestosController::class, 'verPuestos']);
 
-Route::put('/eliminarusuario', function(){
+Route::post('/crearpersonal', [personalController::class, 'crearPersonal']);
 
-});
+Route::put('/eliminarpersonal', [personalController::class, 'eliminarPersonal']); 
 
-Route::get('/verusuario', function(){
-    // ver usuario
-});
+Route::post('/verpersonalid', [personalController::class, 'verPersonalId']);
 
-Route::post('/nuevavisita', function(){
-    // crear nueva visita
-});
+Route::post('/verpersonalnombre', [personalController::class, 'verPersonalNombre']);
 
-Route::get('/vervisitas', function(){
-    // ver todas las visitas
-});
+Route::post('/verpersonalpuesto', [personalController::class, 'verPersonalPuesto']);
 
-Route::get('/visitasdia', function(){
+Route::post('/nuevavisita', [visitaController::class, 'crearVisita']);
 
-});
+Route::post('/vervisitas', [visitaController::class, 'verVisitasActivas']);
 
-Route::get('/verdepartamentos', function(){
-    // ver todos los departamentos
-});
+Route::post('/visitasdia', [visitaController::class, 'verTodasVisitas']);
 
-Route::get('/nombredepartamentos', function(){
-    
-});
+Route::put('/terminarvisita', [visitaController::class, 'terminarVisita']);
 
-Route::get('/motivosdepartamento', [motivoController::class, 'verMotivos']);
+Route::get('/verdepartamentos', [departamentoController::class, 'verDepartamentos']);
 
+Route::post('/motivosdepartamento', [motivoController::class, 'verMotivos']);
+ 
 
 

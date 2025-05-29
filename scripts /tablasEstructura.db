@@ -44,3 +44,4 @@ ADD COLUMN apellidomaternovisitante VARCHAR(50) NOT NULL;
 ALTER TABLE personal 
 ADD COLUMN apellidopaterno VARCHAR(50) NOT NULL,
 ADD COLUMN apellidomaterno VARCHAR(50) NOT NULL;
+ADD COLUMN cancelado VARCHAR(50) NOT NULL;
