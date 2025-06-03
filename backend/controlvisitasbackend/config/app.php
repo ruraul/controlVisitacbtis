@@ -104,6 +104,7 @@ return [
             explode(',', env('APP_PREVIOUS_KEYS', ''))
         ),
     ],
+    
 
     /*
     |--------------------------------------------------------------------------
@@ -117,6 +118,12 @@ return [
     | Supported drivers: "file", "cache"
     |
     */
+    'guards' => [
+    'api' => [
+        'driver' => 'jwt',
+        'provider' => 'users',
+    ],
+    ],
 
     'maintenance' => [
         'driver' => env('APP_MAINTENANCE_DRIVER', 'file'),

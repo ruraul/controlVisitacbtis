@@ -3,10 +3,13 @@
 namespace App\Models;
 
 use Illuminate\Database\Eloquent\Model;
+use Tymon\JWTAuth\Contracts\JWTSubject;
+use Illuminate\Foundation\Auth\User as Authenticatable;
 
-class Personal extends Model
+class Personal extends Authenticatable implements JWTSubject
 {
     protected $table = 'personal';
+    protected $primaryKey = 'id_personal';
 
     protected $fillable = [
         'nombre',
@@ -15,10 +18,27 @@ class Personal extends Model
         'id_departamento',
         'contrasena',
         'num_puesto',
-        'numcel'
+        'numcel',
+        'cancelado',
+        'email'
     ];
 
-    public function setContrasenaAttribute($value){
-        $this->attributes['contrasena'] = bcrypt($value);
+    protected $hidden = ['contrasena'];
+
+
+
+    public function getJWTIdentifier()
+    {
+        return $this->getKey();
+    }
+
+    public function getJWTCustomClaims()
+    {
+        return [];
+    }
+
+    public function getAuthPassword()
+    {
+        return $this->contrasena;
     }
 }
